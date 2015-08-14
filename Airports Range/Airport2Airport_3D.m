@@ -58,7 +58,7 @@ for k=1:length(start_list)
 end
 
 % Create movie
-writerObj = VideoWriter('Paths.mp4');
+writerObj = VideoWriter('Paths.mp4','MPEG-4');
 writeObj.Quality = 100;
 open(writerObj);
 
