@@ -7,14 +7,13 @@ clc
 load('airports.mat')
 
 % ============================== SETTINGS =============================== %
-start_list = {'KINGFORD SMITH' 'JAN SMUTS' 'DUBAI' 'DALLAS FORT WORTH'...
-    'DUBAI' 'DUBAI' 'JOHN F. KENNEDY' 'NEWARK INTL' 'DOHA' 'DUBAI' 'JAN SMUTS'...
-    'LOS ANGELES INTL' 'TORONTO' 'JOHN F. KENNEDY' 'JAWAHARIAL NEHRU INTL' 'CHICAGO O''HARE'...
-    'VANCOUVER' 'DUBAI' 'DUBAI' 'BEN GURION INTL.'};
-end_list = {'DALLAS FORT WORTH' 'WM. B. HARTSFIELD' 'LOS ANGELES INTL' 'BRISBANE' 'HOUSTON INTL'...
-    'SAN FRANCISCO' 'KAI TAK' 'KAI TAK' 'HOUSTON INTL' 'DALLAS FORT WORTH'...
-    'JOHN F. KENNEDY' 'MELBOURNE INTL.' 'KAI TAK' 'CHIANG KAI SHEK' 'NEWARK INTL'...
-    'KAI TAK' 'KINGFORD SMITH' 'WM. B. HARTSFIELD' 'GUARULHAS' 'LOS ANGELES INTL'};
+start_list = {'KINGFORD SMITH' 'JAN SMUTS INT' 'DUBAI' 'DALLAS FORT WORTH'...
+    'DUBAI' 'DUBAI' 'JOHN F. KENNEDY' 'NEWARK INTL' 'DOHA' 'DUBAI' 'JAN SMUTS INT'...
+    'LA INTL' 'TORONTO' 'JOHN F. KENNEDY' 'JAWAH. NEHRU INT' 'CHICAGO O''HARE'...
+    'VANCOUVER' DUBAI
+DUBAI
+BEN GURION INTL};
+end_list = {'DALLAS FORT WORTH'};
 
 % ======================================================================= %
 
@@ -27,9 +26,6 @@ load coast
 
 % Plot Coastline
 plotm(lat,long)
-
-% Preallocate dist
-dist = zeros(length(start_list),1);
 
 % Plot routes
 for k=1:length(start_list)
