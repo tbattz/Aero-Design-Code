@@ -33,6 +33,6 @@ s.children(1).properties.CData = double(c)/255;
 figure;
 struct2handle(s,gcf);
 set(gcf,'color','k','renderer','zbuffer','inverthardcopy','off','name',...
-   'Earth');
+   'Earth','units','normalized','outerposition',[0 0 1 1]);
 axis equal
 return
