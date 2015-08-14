@@ -32,28 +32,13 @@ while found==0
     end
 end
 
-% Parse Lat and long
-space = strfind(GeographicLocation(i),' ');
-if strcmp(GeographicLocation{i}(space{1}-1),'N')==1
-    sign1 = 1;
-else
-    sign1 = -1;
-end
-if strcmp(GeographicLocation{i}(end),'E')==1
-    sign2 = 1;
-else
-    sign2 = -1;
-end
-lat = sign1*(str2num(GeographicLocation{i}(1:space{1}-4))+(str2num(GeographicLocation{i}(space{1}-3:space{1}-2))/60));
-lon = sign2*(str2num(GeographicLocation{i}(space{1}+1:end-3))+(str2num(GeographicLocation{i}(end-2:end-1))/60));
-
-
-% Find Required Airport
-
+% Get correct lat and lon values
+latt = lat(i);
+lonn = lon(i);
 
 % Display Earth
 satglobe4
-[x,y,z] = camtargm(lat,lon,1);
+[x,y,z] = camtargm(latt,lonn,1);
 view([x y z])
 hold on
 
@@ -61,11 +46,11 @@ hold on
 range_deg = km2deg(range_km);
 
 % Plot center point
-plot3m(lat,lon,0.01,'r.', 'MarkerSize', 20)
+plot3m(latt,lonn,0.01,'r.', 'MarkerSize', 20)
 
 % Generate surrounding points
 circ = linspace(0,360,npoints);
-[latout, lonout] =reckon(lat,lon,range_deg,circ);
+[latout, lonout] =reckon(latt,lonn,range_deg,circ);
 
 % Plot circle
 plot3m(latout,lonout,0.01,'g-', 'MarkerSize', 20)
