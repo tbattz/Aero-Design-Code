@@ -25,19 +25,19 @@ figure('units','normalized','outerposition',[0 0 1 1])
 %     'frame', 'on', 'maplonlimit', [0 360]);
 ax = axesm('MapProjection', 'robinson','grid','on', ...
     'frame', 'on', 'maplonlimit', [0 360]);
-tightmap
-load satglobe4
-latlim = [-90  90];
-lonlim = [0 360];
-gratsize = 1 + [diff(latlim), diff(wrapTo360(lonlim))]/6;
-[lat, lon] = meshgrat(latlim, lonlim, gratsize);
-lon(:,1) = 0;
-% Adjusting image c
-center = floor(size(c,2)/2); 
-d(size(c,1),size(c,2),size(c,3)) = uint8(0);
-d(:,1:center+1,:) = c(:,center+1:end,:);
-d(:,center+2:end,:) = c(:,1:center,:);
-surfacem(lat, lon, flipud(d));
+% tightmap
+% load satglobe4
+% latlim = [-90  90];
+% lonlim = [0 360];
+% gratsize = 1 + [diff(latlim), diff(wrapTo360(lonlim))]/6;
+% [lat, lon] = meshgrat(latlim, lonlim, gratsize);
+% lon(:,1) = 0;
+% % Adjusting image c
+% center = floor(size(c,2)/2); 
+% d(size(c,1),size(c,2),size(c,3)) = uint8(0);
+% d(:,1:center+1,:) = c(:,center+1:end,:);
+% d(:,center+2:end,:) = c(:,1:center,:);
+% surfacem(lat, lon, flipud(d));
 
 % Load Coastline
 load coast
